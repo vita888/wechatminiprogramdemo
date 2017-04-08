@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="container">
+ 
+ <view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+ </view>
+
+ <view class="notice">
+    <image src="../../images/icon-radio.png"></image>
+    <text class="notice-title">最新通知:</text>
+   
+      <view class="marquee_box">
+        <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
+          <text>{{text}}</text>
+          <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{text}}</text>
+        </view>
+      </view>
+    </view>
+
+ <view class="list">
+  <block wx:for="{{listItems}}">
+    <view class="list-item" bindtap="item1">
+      <image src="../../images/cover-4.jpg"></image>
+      <view class="list-item-right">
+        <text class="list-item-title">
+        {{item.title}}
+        </text>
+        <text class="list-item-content">
+        {{item.content}}
+        </text>
+        <text class="foot">
+        {{item.foot}}
+        </text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="list-item" bindtap="item1">
+      <image src="../../images/cover-1.jpg"></image>
+      <view class="list-item-right">
+        <text class="list-item-title">
+        {{item.title2}}
+        </text>
+        <text class="list-item-content">
+        {{item.content}}
+        </text>
+        <text class="foot">
+        {{item.foot}}
+        </text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="list-item" bindtap="item1">
+      <image src="../../images/cover-2.jpg"></image>
+      <view class="list-item-right">
+        <text class="list-item-title">
+        {{item.title3}}
+        </text>
+        <text class="list-item-content">
+        {{item.content}}
+        </text>
+        <text class="foot">
+        {{item.foot}}
+        </text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="list-item" bindtap="item1">
+      <image src="../../images/cover-3.jpg"></image>
+      <view class="list-item-right">
+        <text class="list-item-title">
+        {{item.title4}}
+        </text>
+        <text class="list-item-content">
+        {{item.content}}
+        </text>
+        <text class="foot">
+        {{item.foot}}
+        </text>
+      </view>
+    </view>
+  </block>
+ </view>
+
+</view>
