@@ -42,9 +42,11 @@ Page({
     console.log("四否点赞"+this.data.like)
   },
 
-  onReady:function(){
-    // 页面渲染完成
+  onReady:function(res){
+   
+    this.videoContext = wx.createVideoContext('myVideo')
   },
+  
   onShow:function(){
     
     // 页面显示
