@@ -21,23 +21,9 @@ Page({
     autoplay: true,
     interval: 1500,
     duration: 500,
-    listItems:[
-      {
-      "title":"第一节课：小程序开发准备",
-      "content":"小程序入门,这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。",
-      "foot":"      主讲人：Vita",
-      "title2":"第二节课，小程序开发准备",
-      "title3":"第三节课，小程序开发准备",
-      "title4":"第四节课，小程序开发准备",
-      }
-    ]
+    listItems:null,
   },
-item1:function(){
-  console.log("item1")
-  wx.navigateTo({
-  url: '../content/content'
-})
-},
+
   
   onShow: function () 
   {
@@ -82,7 +68,24 @@ item1:function(){
   },
  
   onLoad: function () {
-    console.log('onLoad')
+    var that = this;
+    wx.request({
+      url: 'https://zhangdetalk.com/class/index.php',
+      data: {
+
+      },
+      method: 'GET', 
+      header: {
+        'content-type':'application/json'
+      }, // 设置请求的 header
+      success: function(res){
+        console.log(res);
+        that.setData({
+          listItems:res.data.list
+        })
+      }
+    })
     
-  }
+  },
+  
 })

@@ -25,66 +25,25 @@
     </view>
 
  <view class="list">
-  <block wx:for="{{listItems}}">
-    <view class="list-item" bindtap="item1">
-      <image src="../../images/cover-4.jpg"></image>
+  <block wx:for="{{listItems}}" wx:key="{{index}}">
+    <navigator url="../content/content?cl_id={{item.cl_id}}">
+    <view class="list-item">
+      <image src="{{item.cl_img}}"></image>
       <view class="list-item-right">
         <text class="list-item-title">
-        {{item.title}}
+          {{item.cl_title}}
         </text>
         <text class="list-item-content">
-        {{item.content}}
+          {{item.cl_detail}}
         </text>
         <text class="foot">
-        {{item.foot}}
+          {{item.cl_teacher}}
         </text>
       </view>
+      
     </view>
+    </navigator>
     <view class="line"></view>
-    <view class="list-item" bindtap="item1">
-      <image src="../../images/cover-1.jpg"></image>
-      <view class="list-item-right">
-        <text class="list-item-title">
-        {{item.title2}}
-        </text>
-        <text class="list-item-content">
-        {{item.content}}
-        </text>
-        <text class="foot">
-        {{item.foot}}
-        </text>
-      </view>
-    </view>
-    <view class="line"></view>
-    <view class="list-item" bindtap="item1">
-      <image src="../../images/cover-2.jpg"></image>
-      <view class="list-item-right">
-        <text class="list-item-title">
-        {{item.title3}}
-        </text>
-        <text class="list-item-content">
-        {{item.content}}
-        </text>
-        <text class="foot">
-        {{item.foot}}
-        </text>
-      </view>
-    </view>
-    <view class="line"></view>
-    <view class="list-item" bindtap="item1">
-      <image src="../../images/cover-3.jpg"></image>
-      <view class="list-item-right">
-        <text class="list-item-title">
-        {{item.title4}}
-        </text>
-        <text class="list-item-content">
-        {{item.content}}
-        </text>
-        <text class="foot">
-        {{item.foot}}
-        </text>
-      </view>
-    </view>
   </block>
  </view>
 

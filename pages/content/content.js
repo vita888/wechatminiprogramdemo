@@ -1,15 +1,37 @@
 // pages/content/content.js
 Page({
   data:{
-    title:"第一节课：小程序入门准备",
-    introtext:"另外，我们也可以尝试让绝对定位元素在垂直方向上能够无限伸展。若某元素可能覆盖页脚，那么干脆为页脚添加一定的外边距，给该元素让出足够的空间。这样若是这个绝对定位元素下面没有任何其他元素的话，覆盖自然无从谈起，问题也得到了解决。",
-    view:1000,
+    classInfo:null,
     likeIcon:"../../images/icon-heart.png",
     like:false,
     btnIcon:"../../images/icon-download.png"
   },
   
   onLoad:function(options){
+    console.log(options);
+    var that = this;
+    wx.request({
+    url:'https://zhangdetalk.com/class/content.php',
+      data: {
+        cl_id:options.cl_id
+      },
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+       header: {
+         'content-type':'application/json'
+       }, // 设置请求的 header
+      success: function(res){
+        console.log(res);
+        that.setData({
+          classInfo:res.data.list
+        })
+      },
+    })
+    var login_key = wx.getStorageSync('login_key');
+    if(login_key!=1){
+      wx.redirectTo({
+        url: 'pages/login/login',
+      })
+    }
     var _this = this;
     //获取屏幕宽高  
     wx.getSystemInfo({
@@ -56,5 +78,19 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  btn : function(){
+    wx.downloadFile({
+  url: 'https://zhangdetalk.com/class/images/1.pdf',
+  success: function (res) {
+    var filePath = res.tempFilePath
+    wx.openDocument({
+      filePath: filePath,
+      success: function (res) {
+        console.log('打开文档成功')
+      }
+    })
+  }
+})
   }
 })

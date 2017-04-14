@@ -63,24 +63,24 @@ background-color: #ffffff
   flex-wrap: wrap;  
 }
 .list-item-title {
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
-  margin-top: -20rpx;
+  margin-top: -15rpx;
   
  
 }
 .list-item-content {
-  font-size: 10px;
+  font-size: 14px;
   color: #d3d3d3;
-  
+ margin-top: -10rpx;
   width: 100%;
 }
 .foot {
-font-size: 12px;
-margin-top: -10rpx;
+font-size: 10px;
+margin-bottom: 0rpx;
 width: 100%;
 
 }
 .line {
-  border: 1px solid #f1f5f7;
+  border: 2px solid #f1f5f7;
 }

@@ -1,13 +1,14 @@
 <!--pages/content/content.wxml-->
 <view class="container">
+<view wx:for="{{classInfo}}" wx:key="{{index}}" >
     <view class="vid">
-        <video id="myVideo" style="height:{{videoHeight}}px;width:{{videoWidth}}px" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"   enable-danmu danmu-btn controls></video>
+        <video id="myVideo" style="height:{{videoHeight}}px;width:{{videoWidth}}px" src="{{item.cl_video}}"   enable-danmu danmu-btn controls></video>
     </view>
     <view class="intro">
-        <text class="title">{{title}}</text>
-        <text class="intro-text">{{introtext}}</text>
+        <text class="title">{{item.cl_title}}</text>
+        <text class="intro-text">{{item.cl_detail}}</text>
         <view class="foot">
-            <view class="foot-left">浏览量：{{view}}</view>
+            <view class="foot-left">浏览量：{{item.cl_view_num}}</view>
             <view class="foot-right" bindtap="zan">
                 <image src="{{likeIcon}}"></image>
                 <text> 赞</text>
@@ -15,9 +16,10 @@
         </view>
      </view>
      <view class="btn">
-        <button bindtap="default" > 
+        <button bindtap="btn" > 
             <image src="{{btnIcon}}" class="img"></image>
             <text>资料下载</text>
          </button>
      </view>
+</view>
 </view>

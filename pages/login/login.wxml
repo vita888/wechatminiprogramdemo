@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <view class="log">
+        <image src="{{item1}}"></image>
+        <view class="title">{{title1}}</view>
+        <view class="logininfo">
+                {{logininfo}}
+        </view>
+        
+        <input class="input1"
+    placeholder="QQ号" placeholder-class="login-place" maxlength="12" type="text" focus="false" bindinput = "getQQ"/>
+    
+        <input class="input2" 
+    placeholder="密码" password="true" maxlength="12" placeholder-class="login-place" type="text" focus="false" bindinput="getpw"/>
+        <view class="login" bindtap="login">
+             登陆 
+        </view>
+    </view>
+
+</view>
+
