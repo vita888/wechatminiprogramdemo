@@ -11,8 +11,8 @@
     background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
-    
-    margin: 15rpx 5rpx;
+    border-radius: 10rpx;    
+    margin: 15rpx auto;
 }
 .title {
     font-size: 20px;

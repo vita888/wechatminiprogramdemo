@@ -9,6 +9,12 @@ Page({
   
   onLoad:function(options){
     console.log(options);
+    var login_key = wx.getStorageSync('login_key');
+    if(login_key!=1){
+      wx.redirectTo({
+        url: '../login/login',
+      })
+    }//登陆验证
     var that = this;
     wx.request({
     url:'https://zhangdetalk.com/class/content.php',
@@ -26,12 +32,7 @@ Page({
         })
       },
     })
-    var login_key = wx.getStorageSync('login_key');
-    if(login_key!=1){
-      wx.redirectTo({
-        url: 'pages/login/login',
-      })
-    }
+
     var _this = this;
     //获取屏幕宽高  
     wx.getSystemInfo({

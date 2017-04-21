@@ -1,12 +1,10 @@
 {
   "pages":[
-     
      "pages/index/index",
      "pages/login/login",
-    "pages/content/content",
-    "pages/problem/problem",
-    "pages/login/login",
-    "pages/my/my"
+     "pages/content/content",
+     "pages/problem/problem",
+     "pages/my/my"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -15,6 +13,7 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+      "borderStyle": "white",
       "list": [{
         "pagePath": "pages/index/index",
         "text": "首页",

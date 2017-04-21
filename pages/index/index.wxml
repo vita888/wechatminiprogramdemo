@@ -16,10 +16,18 @@
     <image src="../../images/icon-radio.png"></image>
     <text class="notice-title">最新通知:</text>
    
-      <view class="marquee_box">
-        <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
-          <text>{{text}}</text>
-          <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;">{{text}}</text>
+      <view class="scroll_box">
+         <scroll-view  scroll-y="true" style="height: 45rpx;" scroll-into-view="{{toView}}" >
+        <view id="first">
+          <text>欢迎来学第一节课</text>
+        </view>
+        <view id="second">
+          <text>欢迎来学第二节课</text>
+        </view>
+        <view id="third">
+          <text>欢迎来学第三节课</text>
+        </view>
+          </scroll-view>
         </view>
       </view>
     </view>
@@ -37,7 +45,7 @@
           {{item.cl_detail}}
         </text>
         <text class="foot">
-          {{item.cl_teacher}}
+          主讲老师：何思羽
         </text>
       </view>
       
@@ -45,6 +53,6 @@
     </navigator>
     <view class="line"></view>
   </block>
- </view>
+ 
 
 </view>
